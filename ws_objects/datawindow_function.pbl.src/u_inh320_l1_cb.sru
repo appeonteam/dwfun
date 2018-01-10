@@ -13,7 +13,7 @@ fontcharset fontcharset = ansi!
 fontpitch fontpitch = variable!
 fontfamily fontfamily = swiss!
 string facename = "Arial"
-string text = "none"
+string text = "nonettt"
 end type
 global u_inh320_l1_cb u_inh320_l1_cb
 
