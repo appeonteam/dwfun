@@ -1,0 +1,57 @@
+﻿$PBExportHeader$d_orders_expression.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=84 color="536870912" )
+summary(height=184 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=104 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes name=orderid dbname="OrderID" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=customerid dbname="Orders.CustomerID" validation="gettext() <> ~"CY~"" validationmsg="'THIS COLUMN ISN~~'T  CY'" )
+ column=(type=long update=yes updatewhereclause=yes name=employeeid dbname="Orders.EmployeeID" )
+ column=(type=datetime update=yes updatewhereclause=yes name=orderdate dbname="Orders.OrderDate" )
+ column=(type=datetime update=yes updatewhereclause=yes name=requireddate dbname="Orders.RequiredDate" )
+ column=(type=datetime update=yes updatewhereclause=yes name=shippeddate dbname="Orders.ShippedDate" )
+ column=(type=long update=yes updatewhereclause=yes name=shipvia dbname="Orders.ShipVia" )
+ column=(type=decimal(4) update=yes updatewhereclause=yes name=freight dbname="Orders.Freight" )
+ column=(type=char(80) update=yes updatewhereclause=yes name=shipname dbname="Orders.ShipName" )
+ column=(type=char(120) update=yes updatewhereclause=yes name=shipaddress dbname="Orders.ShipAddress" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=shipcity dbname="Orders.ShipCity" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=shipregion dbname="Orders.ShipRegion" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=shippostalcode dbname="Orders.ShipPostalCode" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=shipcountry dbname="Orders.ShipCountry" )
+ retrieve="  SELECT top 200
+			Orders.OrderID,   
+         Orders.CustomerID,   
+         Orders.EmployeeID,   
+         Orders.OrderDate,   
+         Orders.RequiredDate,   
+         Orders.ShippedDate,   
+         Orders.ShipVia,   
+         Orders.Freight,   
+         Orders.ShipName,   
+         Orders.ShipAddress,   
+         Orders.ShipCity,   
+         Orders.ShipRegion,   
+         Orders.ShipPostalCode,   
+         Orders.ShipCountry  
+    FROM Orders   
+" filter="year( orderdate ) = 1996" sort="day(orderdate) A " )
+text(band=header alignment="2" text="Bug7811" border="6" color="134217734" x="9" y="8" height="64" width="297" html.valueishtml="0"  name=orderid_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217747" )
+text(band=header alignment="2" text="Customerid" border="6" color="134217734" x="315" y="8" height="64" width="544" html.valueishtml="0"  name=customerid_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217747" )
+text(band=header alignment="2" text="Employeeid" border="6" color="134217734" x="869" y="8" height="64" width="334" html.valueishtml="0"  name=employeeid_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217747" )
+text(band=header alignment="2" text="Orderdate" border="6" color="134217734" x="1211" y="8" height="64" width="617" html.valueishtml="0"  name=orderdate_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217747" )
+text(band=header alignment="2" text="Requireddate" border="6" color="134217734" x="1838" y="8" height="64" width="567" html.valueishtml="0"  name=requireddate_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217747" )
+text(band=header alignment="2" text="Shipcountry" border="6" color="134217734" x="2414" y="8" height="64" width="622" html.valueishtml="0"  name=shipcountry_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217747" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="0" color="255" x="9" y="8" height="88" width="297" format="[general]" html.valueishtml="0"  name=orderid visible="0~tif(isselected(),0,1) " edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="0" color="33554432" x="315" y="8" height="88" width="544" format="[general]" html.valueishtml="0"  name=customerid visible="1" edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=2  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="0" color="33554432" x="869" y="8" height="88" width="334" format="[general]" html.valueishtml="0"  name=employeeid visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=40 border="0" color="33554432" x="1211" y="8" height="88" width="617" format="[shortdate] [time]" html.valueishtml="0"  name=orderdate visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=50 border="0" color="33554432" x="1838" y="8" height="88" width="567" format="[shortdate] [time]" html.valueishtml="0"  name=requireddate visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=60 border="0" color="33554432" x="2414" y="8" height="88" width="622" format="[general]" html.valueishtml="0"  name=shipcountry visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=summary alignment="0" expression="'Page ' + page() + ' of ' + pageCount()"border="0" color="33554432" x="1838" y="16" height="64" width="567" format="[general]" html.valueishtml="0"  name=page_1 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=summary alignment="0" text="Validation: " border="0" color="33554432" x="315" y="20" height="64" width="544" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=summary alignment="0" text="Sort: month(orderdate)" border="0" color="33554432" x="1211" y="16" height="64" width="617" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=summary alignment="0" text="Filter:year( orderdate ) = 1998" border="0" color="33554432" x="1211" y="96" height="64" width="617" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=summary alignment="0" text="customerid <> ~"CY~"" border="0" color="33554432" x="315" y="96" height="64" width="544" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

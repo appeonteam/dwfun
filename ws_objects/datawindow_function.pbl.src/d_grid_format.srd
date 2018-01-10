@@ -1,0 +1,59 @@
+﻿$PBExportHeader$d_grid_format.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=12632256 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=264 color="536870912" )
+summary(height=96 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=272 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=emp_id dbname="employee.emp_id" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=emp_fname dbname="employee.emp_fname" )
+ column=(type=char(4) update=yes updatewhereclause=yes name=state dbname="employee.state" )
+ column=(type=decimal(4) update=yes updatewhereclause=yes name=salary dbname="employee.salary" )
+ column=(type=datetime update=yes updatewhereclause=yes name=start_date dbname="employee.start_date" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"employee~" ) COLUMN(NAME=~"employee.emp_id~") COLUMN(NAME=~"employee.emp_fname~") COLUMN(NAME=~"employee.state~") COLUMN(NAME=~"employee.salary~") COLUMN(NAME=~"employee.start_date~")WHERE(    EXP1 =~"employee.emp_id~"   OP =~"=~"    EXP2 =~"102~" ) ) " update="employee" updatewhere=1 updatekeyinplace=no )
+text(band=header alignment="2" text="display
+only
+Hscroll
+bar" border="3" color="33554432" x="1417" y="24" height="224" width="421" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" font.strikethrough="1" background.mode="2" background.color="16711680" )
+text(band=header alignment="2" text="Vscroll
+bar
+H auto
+tag=12" border="4" color="33554432" x="1847" y="24" height="224" width="375" html.valueishtml="0"  name=t_3  tag="12" visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16711680" )
+text(band=header alignment="1" text="Emp 
+Id
+(align:
+left)" border="0" color="33554432" x="576" y="24" height="224" width="279" html.valueishtml="0"  name=emp_id_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.italic="1" background.mode="2" background.color="16711680" )
+text(band=header alignment="2" text="limit
+0
+(align:
+center)" border="1" color="33554432" x="864" y="24" height="224" width="270" html.valueishtml="0"  name=emp_fname_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="16711680" )
+text(band=header alignment="3" text="limit
+2
+(align:
+justify)" border="2" color="33554432" x="1143" y="24" height="224" width="265" html.valueishtml="0"  name=state_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.strikethrough="1" background.mode="2" background.color="16711680" )
+text(band=header alignment="2" text="Start Date
+tag=10" border="6" color="33554432" x="2523" y="24" height="224" width="270" html.valueishtml="0"  name=start_date_t  tag="10" visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16711680" )
+text(band=header alignment="2" text="visible=false" border="5" color="33554432" x="2802" y="24" height="224" width="242" html.valueishtml="0"  name=salary_t visible="0"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16711680" )
+text(band=header alignment="2" text="V H 
+scroll bar
+V H auto" border="5" color="33554432" x="2231" y="24" height="224" width="283" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16711680" )
+text(band=header alignment="0" text="custom
+color
+(align:
+right)" border="2" color="33554432" x="288" y="24" height="224" width="279" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="24651573" )
+text(band=header alignment="1" text="int limit
+=280
+edit.format" border="0" color="33554432" x="9" y="24" height="224" width="270" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.italic="1" background.mode="2" background.color="16711680" )
+column(band=detail id=5 alignment="0" tabsequence=90 border="6" color="33554432" x="2523" y="16" height="208" width="270" format=" ###.##" html.valueishtml="0"  name=start_date  tag="10" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16776960" )
+column(band=detail id=1 alignment="0" tabsequence=20 border="2" color="33554432" x="288" y="16" height="208" width="279" format="[date]" html.valueishtml="0"  name=emp_id_1 visible="1" edit.limit=0 edit.case=any edit.format="" edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=2  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="24585849" )
+column(band=detail id=1 alignment="1" tabsequence=30 border="0" color="33554432" x="576" y="16" height="208" width="279" format=" ###.##" html.valueishtml="0"  name=emp_id visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="@ËÎÌå" font.height="-10" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" font.italic="1" background.mode="2" background.color="16776960" )
+column(band=detail id=2 alignment="2" tabsequence=40 border="1" color="33554432" x="864" y="16" height="208" width="270" format=" ###.##" html.valueishtml="0"  name=emp_fname visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="16776960" )
+column(band=detail id=3 alignment="3" tabsequence=50 border="2" color="33554432" x="1143" y="16" height="208" width="265" format=" ###.##" html.valueishtml="0"  name=state visible="1" edit.limit=2 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.strikethrough="1" background.mode="2" background.color="16776960" )
+column(band=detail id=4 alignment="1" tabsequence=100 border="5" color="33554432" x="2802" y="16" height="208" width="242" format=" ###.##" html.valueishtml="0"  name=salary visible="0" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.autovscroll=yes edit.hscrollbar=yes edit.imemode=2 edit.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16776960" )
+column(band=detail id=4 alignment="1" tabsequence=70 border="4" color="33554432" x="1847" y="16" height="208" width="375" format=" ###.##" html.valueishtml="0"  name=salary_1  tag="12" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.hscrollbar=yes edit.imemode=2  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16776960" )
+column(band=detail id=4 alignment="1" tabsequence=60 border="3" color="33554432" x="1417" y="16" height="208" width="421" format=" ###.##" html.valueishtml="0"  name=salary_2 visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.hscrollbar=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.italic="1" font.underline="1" font.strikethrough="1" background.mode="2" background.color="16776960" )
+column(band=detail id=4 alignment="1" tabsequence=80 border="5" color="33554432" x="2231" y="16" height="208" width="283" format=" ###.##" html.valueishtml="0"  name=salary_3 visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.autovscroll=yes edit.hscrollbar=yes edit.imemode=2 edit.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16776960" )
+column(band=detail id=1 alignment="0" tabsequence=10 border="2" color="33554432" x="9" y="16" height="208" width="270" format=" ###.##" html.valueishtml="0"  name=emp_id_2 visible="1" edit.limit=280 edit.case=any edit.format="" edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=2  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="24585849" )
+compute(band=summary alignment="0" expression="today()"border="0" color="33554432" x="288" y="12" height="76" width="279" format="[general]" html.valueishtml="0"  name=date_1 visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

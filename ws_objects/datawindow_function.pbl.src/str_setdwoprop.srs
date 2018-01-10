@@ -1,0 +1,8 @@
+﻿$PBExportHeader$str_setdwoprop.srs
+global type str_setdwoprop from structure
+	datawindow		adw_1
+	string		as_col
+	string		as_prop
+	string		as_value
+end type
+

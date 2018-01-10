@@ -1,0 +1,15 @@
+﻿$PBExportHeader$d_f158a05_detailprop01.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=5 HTMLDW=no print.documentname="" print.orientation = 2 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 9 print.prompt=no print.buttons=yes print.preview.buttons=yes pointer="Arrow!" )
+header(height=140 color="553648127" )
+summary(height=4 color="536870912" )
+footer(height=4 color="536870912" )
+detail(height=1016 color="536870912"  height.autosize=yes)
+table(column=(type=char(10) updatewhereclause=yes name=a dbname="a" )
+ unbound = "yes")
+text(band=header alignment="0" text="Header" border="0" color="0" x="64" y="32" height="80" width="251" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+report(band=detail dataobject="d_all_dbtype" x="242" y="120" height="136" width="1934" border="0"  height.autosize=yes criteria="" newpage = yes trail_footer = yes  name=dw_1 visible="1"  slideup=directlyabove )
+report(band=detail dataobject="d_bug7346" x="256" y="352" height="136" width="1920" border="0"  height.autosize=yes criteria="" newpage = yes trail_footer = yes  name=dw_2 visible="1~tif ( mod( getrow() , 2 ) = 0 ,1,0)"  slideleft=yes  slideup=directlyabove )
+text(band=detail alignment="0" text="text" border="0" color="33554432" x="859" y="516" height="76" width="110" html.valueishtml="0"  name=t_1 visible="1"  slideup=allabove  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

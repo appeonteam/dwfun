@@ -1,0 +1,20 @@
+﻿$PBExportHeader$p_datawindow_function_eascomps1.srj
+$PBExportComments$Generated Jaguar Component Project
+GeneratorID:{DF93F2A2-E504-11D1-B30A-006008925BD4}GENBC00000165
+L	D:\datawindow_function.pbl
+L	D:\dw_ora.pbl
+L	D:\distribute_dw.pbl
+L	C:\Program Files\Appeon\Developer\appeon_workarounds\AX\appeon_workarounds_ax.pbl
+O	n_ddw
+PROJVERS:2
+PACKAGE:aaa	
+PROPERTY:n_ddw	n_ddw	0	1	1	0	1	0	1	1	0
+SERVERINFO:192.0.1.35	9000	jagadmin	1		
+CONSOLIDATEDPBD:1	D:\datawindow_function.pbd
+LIBS:4	D:\datawindow_function.pbl	0	D:\dw_ora.pbl	0	D:\distribute_dw.pbl	0	C:\Program Files\Appeon\Developer\appeon_workarounds\AX\appeon_workarounds_ax.pbl	0
+PBR:
+MISC:0	0	0	0	0	0	0	1
+APPLIBLIST:
+INTERFACE:J		
+ADVANCED:1	1	1	0	1
+
