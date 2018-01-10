@@ -141,6 +141,7 @@
  "w_mdi.srw" "datawindow_function.pbl";
  "w_modifyprop.srw" "datawindow_function.pbl";
  "w_pbvsjs.srw" "datawindow_function.pbl";
+ "w_pp.srw" "datawindow_function.pbl";
  "w_property_event.srw" "datawindow_function.pbl";
  "w_response.srw" "datawindow_function.pbl";
  "w_sharedata.srw" "datawindow_function.pbl";
