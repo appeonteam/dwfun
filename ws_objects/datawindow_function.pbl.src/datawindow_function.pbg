@@ -12,7 +12,6 @@
  "d_argument.srd" "datawindow_function.pbl";
  "d_bug7346.srd" "datawindow_function.pbl";
  "d_bug8156.srd" "datawindow_function.pbl";
- "d_bug8724.srd" "datawindow_function.pbl";
  "d_colors_panel.srd" "datawindow_function.pbl";
  "d_composite.srd" "datawindow_function.pbl";
  "d_datatype.srd" "datawindow_function.pbl";
