@@ -78,6 +78,7 @@
  "d_having.srd" "datawindow_function.pbl";
  "d_label.srd" "datawindow_function.pbl";
  "d_label_slideleft.srd" "datawindow_function.pbl";
+ "d_lable.srd" "datawindow_function.pbl";
  "d_login_user.srd" "datawindow_function.pbl";
  "d_mask_time.srd" "datawindow_function.pbl";
  "d_mulview.srd" "datawindow_function.pbl";
@@ -114,6 +115,7 @@
  "p_pile.srp" "datawindow_function.pbl";
  "d_query.srq" "datawindow_function.pbl";
  "str_setdwoprop.srs" "datawindow_function.pbl";
+ "str_test.srs" "datawindow_function.pbl";
  "n_cst_config.sru" "datawindow_function.pbl";
  "n_supermenu.sru" "datawindow_function.pbl";
  "n_supermenu_child.sru" "datawindow_function.pbl";
