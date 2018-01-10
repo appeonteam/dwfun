@@ -111,12 +111,14 @@
  "p_datawindow_function_eascomps2.srj" "datawindow_function.pbl";
  "p_datawindow_function_easproxy.srj" "datawindow_function.pbl";
  "p_datawindow_function_ejbclientproxy.srj" "datawindow_function.pbl";
+ "m_m.srm" "datawindow_function.pbl";
  "m_t.srm" "datawindow_function.pbl";
  "p_pile.srp" "datawindow_function.pbl";
  "d_query.srq" "datawindow_function.pbl";
  "str_setdwoprop.srs" "datawindow_function.pbl";
  "str_test.srs" "datawindow_function.pbl";
  "n_cst_config.sru" "datawindow_function.pbl";
+ "n_richtext.sru" "datawindow_function.pbl";
  "n_supermenu.sru" "datawindow_function.pbl";
  "n_supermenu_child.sru" "datawindow_function.pbl";
  "u_1.sru" "datawindow_function.pbl";
