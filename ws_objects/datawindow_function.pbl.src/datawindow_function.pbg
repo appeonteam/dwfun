@@ -110,6 +110,7 @@
  "p_datawindow_function_eascomps1.srj" "datawindow_function.pbl";
  "p_datawindow_function_eascomps2.srj" "datawindow_function.pbl";
  "p_datawindow_function_easproxy.srj" "datawindow_function.pbl";
+ "p_datawindow_function_ejbclientproxy.srj" "datawindow_function.pbl";
  "m_t.srm" "datawindow_function.pbl";
  "p_pile.srp" "datawindow_function.pbl";
  "d_query.srq" "datawindow_function.pbl";
