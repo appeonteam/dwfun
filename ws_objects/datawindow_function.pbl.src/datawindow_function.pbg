@@ -126,6 +126,8 @@
  "u_inh320_l1_cb.sru" "datawindow_function.pbl";
  "u_inh320_l2_cb.sru" "datawindow_function.pbl";
  "u_inh320_l3_cb.sru" "datawindow_function.pbl";
+ "u_reproduce.sru" "datawindow_function.pbl";
+ "u_reproduce2.sru" "datawindow_function.pbl";
  "uo_getproperties.sru" "datawindow_function.pbl";
  "w_createdw.srw" "datawindow_function.pbl";
  "w_createsingleobject.srw" "datawindow_function.pbl";
