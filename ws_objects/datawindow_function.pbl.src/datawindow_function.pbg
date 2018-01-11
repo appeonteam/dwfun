@@ -12,6 +12,7 @@
  "d_argument.srd" "datawindow_function.pbl";
  "d_bug7346.srd" "datawindow_function.pbl";
  "d_bug8156.srd" "datawindow_function.pbl";
+ "d_bug8724.srd" "datawindow_function.pbl";
  "d_colors_panel.srd" "datawindow_function.pbl";
  "d_composite.srd" "datawindow_function.pbl";
  "d_datatype.srd" "datawindow_function.pbl";
@@ -78,7 +79,6 @@
  "d_having.srd" "datawindow_function.pbl";
  "d_label.srd" "datawindow_function.pbl";
  "d_label_slideleft.srd" "datawindow_function.pbl";
- "d_lable.srd" "datawindow_function.pbl";
  "d_login_user.srd" "datawindow_function.pbl";
  "d_mask_time.srd" "datawindow_function.pbl";
  "d_mulview.srd" "datawindow_function.pbl";
@@ -106,21 +106,14 @@
  "d_view_test.srd" "datawindow_function.pbl";
  "d_view_update.srd" "datawindow_function.pbl";
  "dw_user.srd" "datawindow_function.pbl";
- "f_dw_to_excel.srf" "datawindow_function.pbl";
  "p_datawindow_function_eascomps.srj" "datawindow_function.pbl";
  "p_datawindow_function_eascomps1.srj" "datawindow_function.pbl";
  "p_datawindow_function_eascomps2.srj" "datawindow_function.pbl";
  "p_datawindow_function_easproxy.srj" "datawindow_function.pbl";
- "p_datawindow_function_ejbclientproxy.srj" "datawindow_function.pbl";
- "p_datawindow_function_exe.srj" "datawindow_function.pbl";
- "m_m.srm" "datawindow_function.pbl";
  "m_t.srm" "datawindow_function.pbl";
- "p_pile.srp" "datawindow_function.pbl";
  "d_query.srq" "datawindow_function.pbl";
  "str_setdwoprop.srs" "datawindow_function.pbl";
- "str_test.srs" "datawindow_function.pbl";
  "n_cst_config.sru" "datawindow_function.pbl";
- "n_richtext.sru" "datawindow_function.pbl";
  "n_supermenu.sru" "datawindow_function.pbl";
  "n_supermenu_child.sru" "datawindow_function.pbl";
  "u_1.sru" "datawindow_function.pbl";
@@ -133,10 +126,6 @@
  "u_inh320_l1_cb.sru" "datawindow_function.pbl";
  "u_inh320_l2_cb.sru" "datawindow_function.pbl";
  "u_inh320_l3_cb.sru" "datawindow_function.pbl";
- "u_inkpic.sru" "datawindow_function.pbl";
- "u_inkpic2.sru" "datawindow_function.pbl";
- "u_inkpic3.sru" "datawindow_function.pbl";
- "u_reproduce.sru" "datawindow_function.pbl";
  "uo_getproperties.sru" "datawindow_function.pbl";
  "w_createdw.srw" "datawindow_function.pbl";
  "w_createsingleobject.srw" "datawindow_function.pbl";
@@ -149,7 +138,6 @@
  "w_mdi.srw" "datawindow_function.pbl";
  "w_modifyprop.srw" "datawindow_function.pbl";
  "w_pbvsjs.srw" "datawindow_function.pbl";
- "w_pp.srw" "datawindow_function.pbl";
  "w_property_event.srw" "datawindow_function.pbl";
  "w_response.srw" "datawindow_function.pbl";
  "w_sharedata.srw" "datawindow_function.pbl";
