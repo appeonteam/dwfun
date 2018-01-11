@@ -53,7 +53,7 @@ string ls_head[],ls_headtag[]
 //合计区
 long ll_sumnum,startpos,endpos,li_pos
 string ls_sum[],ls_sumtag[],ls_band,token[],list,ls_temp,ls_crosstabcol,ls_summary
-n_cst_string lu_string //PFC string处理对象
+//n_cst_string lu_string //PFC string处理对象
 
 startpos = 1
 ll_rowcount = arg_dw.RowCount()
