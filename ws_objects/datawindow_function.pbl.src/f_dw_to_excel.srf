@@ -1,0 +1,178 @@
+﻿$PBExportHeader$f_dw_to_excel.srf
+global type f_dw_to_excel from function_object
+end type
+
+forward prototypes
+global function integer f_dw_to_excel (ref datawindow arg_dw, integer start_row, integer head_row, integer col_num, string as_filetype)
+end prototypes
+
+global function integer f_dw_to_excel (ref datawindow arg_dw, integer start_row, integer head_row, integer col_num, string as_filetype);//////////////////////////////////////////////////////////////////////////////////////////
+//																					
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+
+string ls_docname, ls_txtname
+
+integer li_ret,ll_ret,li_handle1,li_handle2
+
+boolean lb_exist
+
+//ls_docname='c:\dw_excel_temp'+string(today(),"yyyymmdd")+"_"+string(now(),"hhmmss")+'.xls'
+
+If Not FileExists("c:\dwmstemp") Then
+	CreateDirectory("c:\dwmstemp")
+End If
+
+ls_txtname = "c:\dwmstemp\"+as_filetype+".txt"
+
+SetPointer(HourGlass!)
+
+arg_dw.SaveAsAscii(ls_txtname,"~t","")
+Yield()
+//Return 1
+integer li_FileNum, loops, i
+
+
+OLEObject excel_app , excel_sheet
+Datastore lds_object
+excel_app = Create OLEObject
+
+lds_object = Create Datastore
+lds_object.DataObject = "d_store_dwobject"
+
+lds_object.SetTransObject(sqlca)
+
+integer li_crosstab=0
+long ll_colnum,ll_rownum,ll_rowcount,ll_row
+string ls_value
+string ls_objects,ls_obj,ls_objs[],ls_objtag[]
+long ll_pos,ll_len,ll_num = 0
+//题头区
+long ll_headnum
+string ls_head[],ls_headtag[]
+//合计区
+long ll_sumnum,startpos,endpos,li_pos
+string ls_sum[],ls_sumtag[],ls_band,token[],list,ls_temp,ls_crosstabcol,ls_summary
+n_cst_string lu_string //PFC string处理对象
+
+startpos = 1
+ll_rowcount = arg_dw.RowCount()
+
+ls_objects = trim(arg_dw.Describe('datawindow.Objects'))
+
+list=ls_objects
+EndPos= pos(list, '~t', StartPos)
+//得到对象列表
+
+i = 1
+Do while ( EndPos > 0 )
+	token[i] = Mid(list, StartPos, EndPos - StartPos)
+	i ++
+	StartPos = EndPos + 1
+	EndPos= pos(list, '~t', StartPos)	
+LOOP
+token[i] = Mid(list, StartPos)
+ll_rownum=UpperBound(token)
+
+ls_summary = "NO"
+
+for i=1 to ll_rownum
+	ls_obj = token[i]
+	//if ls_obj='title' then messagebox('',arg_dw.Describe(ls_obj + '.type'))
+	if lower(arg_dw.Describe(ls_obj + '.type')) = 'column' or 	lower(arg_dw.Describe(ls_obj + '.type')) = 'compute' then
+		ls_band=lower(arg_dw.Describe(ls_obj + '.band'))
+		if ls_band = 'detail' then
+			ll_num += 1
+			ls_objs[ll_num] = ls_obj
+			
+			//Add to DS
+			ll_row = lds_object.InsertRow(0)
+			lds_object.Object.col_name[ll_row] = ls_obj
+			lds_object.Object.x_pos[ll_row] = Double(arg_dw.Describe(ls_obj + '.x'))
+			lds_object.Object.y_pos[ll_row] = Double(arg_dw.Describe(ls_obj + '.y'))
+		end if
+		
+		if ls_band = "summary" Then
+			ls_summary = "YES"
+		End If
+	
+	end if
+
+next
+
+lds_object.SetSort("x_pos A,y_pos A")
+
+lds_object.Sort()
+//得到数据窗口数据的列数与行数（行数应该是数据行数 + 2）
+ll_colnum = ll_num
+ll_rownum = arg_dw.rowcount()
+
+
+li_ret = excel_app.ConnectToObject("","Excel.Application")
+IF li_ret <> 0 THEN
+	//如果Excel还没有打开，则新建。
+	li_ret = excel_app.ConnectToNewObject("Excel.Application")
+	if li_ret <> 0 then
+		MessageBox('OLE错误','OLE无法连接!错误号：' + string(li_ret))
+		return 0
+	end if
+	excel_app.Visible = True	//不可见
+END IF
+
+
+//if start_row=0 then
+excel_app.Application.Workbooks.Opentext(ls_txtname)
+//else
+//	excel_app.Application.Workbooks.Opentext(ls_txtname,3,start_row)
+//end if
+//excel_app.Application.Visible = true
+//excel_app.Workbooks.Add
+excel_sheet = excel_app.Application.ActiveWorkbook.Worksheets[1]
+
+long cols_count 
+cols_count= long(arg_dw.Object.DataWindow.Column.Count)
+
+long col_width,j
+STRING ls_colname[],ls_coltext[],ls_colwidth[],ls_dwvalue,ls_coln
+
+
+Destroy lds_object
+
+excel_app.cells.Select
+excel_app.cells.EntireColumn.AutoFit
+//excel_app.cells.NumberFormatLocal = "@"
+
+If  ls_summary = "YES" Then
+   excel_app.Rows(String(ll_rowcount+2)+":"+String(ll_rowcount+2)).Select
+   excel_app.Selection.ClearContents()
+End If
+excel_app.cells(1,1).Select
+
+//Excel_app.AdjustColumnWidth=true
+//excel_app.Visible = True
+
+//string docname, named
+//integer value
+//value = GetFileSaveName("请输入要保存的EXCEL文件名",docname, named, "XLS","Excel Files (*.XLS),*.XLS")
+//
+//If value =  1 Then
+//	excel_app.Application.Activeworkbook.SaveAs(docname,-4143)	
+//	Yield()
+//	excel_app.activeworkbook.close() 
+//End If
+//
+//excel_app.quit()
+excel_app.DisConnectObject()
+
+Destroy excel_sheet
+Destroy excel_app
+//FileDelete(ls_docname)
+FileDelete(ls_txtname)
+
+//If value =  1 Then
+//	MessageBox("提示","转EXCEL成功.")
+//End If
+SetPointer(Arrow!)
+Return 1
+end function
+
